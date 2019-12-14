@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+}
+
+.memory-game-cointainer {
+  background-image: url('../images/background.jpg');
+}
+
+.version  {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #ffffffcf;
+  font-size: 1rem;
+}
+
+header {
+  height: 7vh;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Mansalva', cursive;
+  color: #ffffffcf;
+}
+
+.play-body {
+  height: 93vh;
+  width: 100vw;
+  display: flex;
+}
+
+aside {
+  /* background-color: lightblue; */
+  width: 20%;
+  color: #ffffffcf;
+}
+
+.bar-container {
+  display: flex;
+  background-color: rgb(0, 0, 0, 0);
+  width: 100%;
+  height: 30%;
+  flex-wrap: wrap;
+  justify-content: center; /* horizontally center in flex */
+  align-items: center; /* vertically center in flex */
+}
+
+.stats {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.bar {
+  /* background-color: lightgreen; */
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* horizontally center in flex */
+  align-items: center; /* vertically center in flex */
+  font-size: 1.4rem;
+}
+.bar button {
+  margin-top: 20px;
+  width: 60%;
+}
+
+.bar-container .bar:nth-child(9) {
+  justify-content: center;
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.card-container {
+  /* background-color: rgb(238, 35, 238, 0.5); */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.card-container .card {
+  margin: 1%;
+  height: 30%;
+  width: 14%;
+  border-radius: 25px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: rgb(0, 0, 0, 0.8) 0px 0px 20px 0px;
+  border: 0px;
+}
+
+.modal-dialog {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* overflow: auto; */
+}
+
+.modal-content {
+  text-align: center;
+  height: 100%;
+  width: 40vw;
+  font-size: 1.8rem;
+}
+
+.card-one {
+  background-image: url("../images/card_one.jpg");
+}
+
+.card-two {
+  background-image: url("../images/card_two.jpg");
+}
+
+.card-three {
+  background-image: url("../images/card_three.jpg");
+}
+
+.card-four {
+  background-image: url("../images/card_four.jpg");
+}
+
+.card-five {
+  background-image: url("../images/card_five.jpg");
+}
+
+.card-six {
+  background-image: url("../images/card_six.jpg");
+}
+
+.card-seven {
+  background-image: url("../images/card_seven.jpg");
+}
+
+.card-eight {
+  background-image: url("../images/card_eight.jpg");
+}
+
+.card-nine {
+  background-image: url("../images/card_nine.jpg");
+}
+
+/* card-back always bottom */
+.card-back {
+  background-image: url("../images/card_back_1.jpg");
+  cursor: pointer;
+}
