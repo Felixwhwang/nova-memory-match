@@ -2,9 +2,9 @@ $(document).ready(initializeApp);
 
 function initializeApp () {
   shufflingCards();
-  $(".modal-footer button:nth-child(1)").on('click', shufflingCards);
-  $(".bar-container .bar:nth-child(7) button").on('click', shufflingCards);
-  $(".bar-container .bar:nth-child(8) button").on('click', function () {
+  $("#play-again").on('click', shufflingCards);
+  $("#new-game").on('click', shufflingCards);
+  $("#start").on('click', function () {
     $(".card-container").on('click', 'div', handleCardClick);
     counterStart();
   });
@@ -16,7 +16,25 @@ var matches = null;
 var max_matches = 9;
 var attempts = null;
 var games_played = 0;
-var gameKey = ['card-one', 'card-one', 'card-two', 'card-two', 'card-three', 'card-three', 'card-four', 'card-four', 'card-five', 'card-five', 'card-six', 'card-six', 'card-seven', 'card-seven', 'card-eight', 'card-eight', 'card-nine', 'card-nine'];
+var gameKey =
+  ['card-one',
+   'card-one',
+   'card-two',
+   'card-two',
+   'card-three',
+   'card-three',
+   'card-four',
+   'card-four',
+   'card-five',
+   'card-five',
+   'card-six',
+   'card-six',
+   'card-seven',
+   'card-seven',
+   'card-eight',
+   'card-eight',
+   'card-nine',
+   'card-nine'];
 var totalSeconds = 0;
 var timeStart = null;
 
@@ -24,8 +42,6 @@ function handleCardClick (event) {
   if($(event.currentTarget).attr('confirm') === 'yes') {
     return;
   }
-
-  //store jquery reference into declared two variables
   if(firstCardClicked === null) {
     firstCardClicked = $(event.currentTarget);
     $(event.currentTarget).removeClass("card-back");
@@ -43,17 +59,14 @@ function handleCardClick (event) {
     console.log('click same card twice');
     return;
   }
-
-  //check both card are clicked
   if(firstCardClicked !== null && secondCardClicked !== null) {
     $('.card').prop('disabled', true);
     attempts++;
     var firstCardBackground = firstCardClicked.css('background-image');
     var secondCardBackground = secondCardClicked.css('background-image');
-    //check if first and second are matching
     if (firstCardBackground !== secondCardBackground) {
       setTimeout(resetCards, 1000);
-    } else {  //cards matches
+    } else {
       firstCardClicked.css('box-shadow', 'rgb(0, 255, 20) 0px 0px 20px 0px');
       secondCardClicked.css('box-shadow', 'rgb(0, 255, 20) 0px 0px 20px 0px');
       firstCardClicked = null;
@@ -105,16 +118,16 @@ function counterStart () {
 
 function counterPause () {
   $(".card-container").off('click', 'div', handleCardClick);
-  $(".bar-container .bar:nth-child(11) button").on('click', counterContinue);
+  $("#continue").on('click', counterContinue);
   clearInterval(timeStart);
-  $(".bar-container .bar:nth-child(10) button").off('click', counterPause);
+  $("#pause").off('click', counterPause);
 }
 
 function counterContinue () {
   $(".card-container").on('click', 'div', handleCardClick);
-  $(".bar-container .bar:nth-child(10) button").on('click', counterPause);
+  $("#pause").on('click', counterPause);
   timeStart = setInterval(setTime, 1000);
-  $(".bar-container .bar:nth-child(11) button").off('click', counterContinue);
+  $("#continue").off('click', counterContinue);
 }
 
 function resetStats () {
@@ -124,8 +137,8 @@ function resetStats () {
   matches = null;
   attempts = null;
   timeStart = null;
-  $(".bar-container .bar:nth-child(10) button").off('click', counterPause);
-  $(".bar-container .bar:nth-child(11) button").off('click', counterContinue);
+  $("#pause").off('click', counterPause);
+  $("#continue").off('click', counterContinue);
   $(".card").addClass("card-back");
   $('#attempts').text("0");
   $('#accuracy').text("0%");
@@ -159,7 +172,10 @@ function shufflingCards () {
   var newGameKey = shuffleArray(gameKey);
   console.table( newGameKey);
   for (var index = 0; index < newGameKey.length; index++) {
-    var newCard = $('<div>').addClass('card card-back ' + newGameKey[index]).attr('confirm', 'no');
+    var newCard =
+      $('<div>')
+      .addClass('card card-back ' + newGameKey[index])
+      .attr('confirm', 'no');
     $('.card-container').append(newCard);
   }
 
