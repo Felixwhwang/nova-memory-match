@@ -12,4 +12,4 @@ A JavaScript memory match application, desktop/iPad oriented.
 - CSS3
 - Bootstrap 4 Module
 ## Live Demo
-Try the application live at
+Try the application live at https://novamm.wenhaowang.net
