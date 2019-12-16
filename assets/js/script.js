@@ -7,6 +7,8 @@ function initializeApp () {
   $("#start").on('click', function () {
     $(".card-container").on('click', 'div', handleCardClick);
     counterStart();
+    $("#start").attr("disabled", true);
+    $("#continue").attr("disabled", true);
   });
 }
 
@@ -50,13 +52,10 @@ function handleCardClick (event) {
     secondCardClicked = $(event.currentTarget);
     $(event.currentTarget).removeClass("card-back");
     secondCardClicked.attr('confirm', 'yes');
-  } else {
-    console.log('two card clicked, so do nothing');
   }
 
   if(firstCardClicked.is(secondCardClicked)) {
     secondCardClicked = null;
-    console.log('click same card twice');
     return;
   }
   if(firstCardClicked !== null && secondCardClicked !== null) {
@@ -111,7 +110,6 @@ function timeDigitsFix (time) {
 function counterStart () {
   if (timeStart === null) {
     timeStart = setInterval(setTime, 1000);
-    console.log('start');
     $(".bar-container .bar:nth-child(10) button").on('click', counterPause);
   }
 }
@@ -121,6 +119,8 @@ function counterPause () {
   $("#continue").on('click', counterContinue);
   clearInterval(timeStart);
   $("#pause").off('click', counterPause);
+  $("#pause").attr("disabled", true);
+  $("#continue").attr("disabled", false);
 }
 
 function counterContinue () {
@@ -128,6 +128,8 @@ function counterContinue () {
   $("#pause").on('click', counterPause);
   timeStart = setInterval(setTime, 1000);
   $("#continue").off('click', counterContinue);
+  $("#continue").attr("disabled", true);
+  $("#pause").attr("disabled", false);
 }
 
 function resetStats () {
@@ -170,7 +172,6 @@ function resetCards(){
 function shufflingCards () {
   $(".card").remove();
   var newGameKey = shuffleArray(gameKey);
-  console.table( newGameKey);
   for (var index = 0; index < newGameKey.length; index++) {
     var newCard =
       $('<div>')
@@ -180,6 +181,9 @@ function shufflingCards () {
   }
 
   resetStats();
+  $("#start").attr("disabled", false);
+  $("#pause").attr("disabled", false);
+  $("#continue").attr("disabled", false);
 }
 
 function shuffleArray (array) {
