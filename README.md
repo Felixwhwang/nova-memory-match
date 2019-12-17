@@ -1,5 +1,5 @@
 # Nova Memory Match
-A JavaScript memory match application, desktop/iPad oriented.
+A JavaScript memory match application, all devices oriented.
 ## Features
 - Shuffle cards for new game.
 - A timer to record time spent for one game.
