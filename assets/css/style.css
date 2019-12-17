@@ -237,4 +237,8 @@ main {
   main {
     height: 76vh;
   }
+
+  .modal-content {
+    width: 100vw;
+  }
 }
