@@ -157,7 +157,7 @@ main {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 375px) {
   aside {
     width: 100%;
   }
@@ -168,5 +168,81 @@ main {
 
   header {
     font-size: 1.5rem;
+    height: 4vh;
+  }
+
+  .bar {
+    font-size: 1rem;
+  }
+
+  .stats {
+    display: none;
+  }
+
+  .game-times {
+    width: 30%;
+  }
+
+  .game-numbers {
+    width: 5%;
+  }
+
+  .attempts {
+    width: 20%;
+  }
+
+  .attempts-number {
+    width: 5%;
+  }
+
+  .accuracy {
+    width: 20%;
+  }
+
+  .accuracy-number {
+    width: 5%;
+  }
+
+  .start {
+    width: 50%;
+  }
+
+  .new {
+    width: 50%;
+  }
+
+  .timer {
+    width: 100%;
+  }
+
+  .pause {
+    width: 50%;
+  }
+
+  .continue {
+    width: 50%;
+  }
+
+  .bar button {
+    margin-top: 0;
+  }
+
+  .bar-container .bar:nth-child(9) {
+    justify-content: center;
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .card-container {
+    align-content: flex-start;
+  }
+
+  .card-container .card {
+    height: 15%;
+    width: 29%;
+  }
+
+  main {
+    height: 76vh;
   }
 }

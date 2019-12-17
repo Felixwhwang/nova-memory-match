@@ -38,13 +38,13 @@
       <aside>
         <div class="stats">Stats</div>
         <div class="bar-container">
-          <div class="bar">Games Played</div>
-          <div class="bar" id="games-played">0</div>
-          <div class="bar">Attempts</div>
-          <div class="bar" id="attempts">0</div>
-          <div class="bar">Accuracy</div>
-          <div class="bar" id="accuracy">0%</div>
-          <div class="bar">
+          <div class="bar game-times">Games Played</div>
+          <div class="bar game-numbers" id="games-played">0</div>
+          <div class="bar attempts">Attempts</div>
+          <div class="bar attempts-number" id="attempts">0</div>
+          <div class="bar accuracy">Accuracy</div>
+          <div class="bar accuracy-number" id="accuracy">0%</div>
+          <div class="bar new">
             <button
               type="button"
               class="btn btn-primary"
@@ -52,7 +52,7 @@
               New Game
             </button>
           </div>
-          <div class="bar">
+          <div class="bar start">
             <button
               type="button"
               class="btn btn-success"
@@ -60,12 +60,12 @@
               Start
             </button>
           </div>
-          <div class="bar">
+          <div class="bar timer">
             <div class='minutes'>00</div>
             <div class='colon'>:</div>
             <div class='seconds'>00</div>
           </div>
-          <div class="bar">
+          <div class="bar pause">
             <button
               type="button"
               class="btn btn-danger"
@@ -73,7 +73,7 @@
               Pause
             </button>
           </div>
-          <div class="bar">
+          <div class="bar continue">
             <button
               switch="off"
               type="button"
