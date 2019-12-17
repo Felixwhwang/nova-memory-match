@@ -11,5 +11,7 @@ A JavaScript memory match application, all devices oriented.
 - HTML5
 - CSS3
 - Bootstrap 4 Module
+## Preview
+![novamm](https://user-images.githubusercontent.com/31264160/71043114-8bbac080-2125-11ea-8481-5bd4bbb30015.gif)
 ## Live Demo
 Try the application live at https://novamm.wenhaowang.net
