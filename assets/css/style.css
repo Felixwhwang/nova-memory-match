@@ -16,14 +16,6 @@ body {
   width: 100vw;
 }
 
-.version  {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: #ffffffcf;
-  font-size: 1rem;
-}
-
 header {
   height: 7vh;
   text-align: center;
