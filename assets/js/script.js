@@ -2,13 +2,17 @@ $(document).ready(initializeApp);
 
 function initializeApp () {
   shufflingCards();
+  $("#new-game").attr("disabled", true);
+  $("#pause").attr("disabled", true);
+  $("#continue").attr("disabled", true);
   $("#play-again").on('click', shufflingCards);
   $("#new-game").on('click', shufflingCards);
   $("#start").on('click', function () {
     $(".card-container").on('click', 'div', handleCardClick);
     counterStart();
+    $("#new-game").attr("disabled", false);
     $("#start").attr("disabled", true);
-    $("#continue").attr("disabled", true);
+    $("#pause").attr("disabled", false);
   });
 }
 
@@ -41,6 +45,9 @@ var totalSeconds = 0;
 var timeStart = null;
 
 function handleCardClick (event) {
+  if($("#pause").attr("disabled") === 'disabled') {
+    counterContinue();
+  }
   if($(event.currentTarget).attr('confirm') === 'yes') {
     return;
   }
@@ -115,7 +122,6 @@ function counterStart () {
 }
 
 function counterPause () {
-  $(".card-container").off('click', 'div', handleCardClick);
   $("#continue").on('click', counterContinue);
   clearInterval(timeStart);
   $("#pause").off('click', counterPause);
@@ -181,9 +187,10 @@ function shufflingCards () {
   }
 
   resetStats();
+  $("#new-game").attr("disabled", true);
+  $("#pause").attr("disabled", true);
+  $("#continue").attr("disabled", true);
   $("#start").attr("disabled", false);
-  $("#pause").attr("disabled", false);
-  $("#continue").attr("disabled", false);
 }
 
 function shuffleArray (array) {
